@@ -1,14 +1,22 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {Paper, TextField, Button} from '@material-ui/core';
+import { Paper, TextField, Button, CircularProgress } from '@material-ui/core';
 import Navbar from './NavBar';
+
+
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+//import Age from './Age';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    
+
     marginTop: 30,
-        '& > *': {
-      
+    '& > *': {
+
     },
   },
   paper: {
@@ -33,27 +41,40 @@ function App() {
 
   return (
     <div className={classes.root}>
-    <Navbar />
+      <Navbar />
 
       <Paper elevation={3} className={classes.paper}>
         <h1>Login</h1>
-      
-      <form className={classes.root} noValidate autoComplete="off">
-        <TextField label="Enter your email" className={classes.input} />
-        <TextField
-          id="standard-password-input"
-          label="Enter your password"
-          type="password"
-          autoComplete="current-password"
-          className={classes.input}
-        />
-        
-        <Button variant="contained" color="primary" className={classes.input}>
-          Login
-        </Button>
-        
-      </form>
 
+        <form className={classes.root} noValidate autoComplete="off">
+          <TextField label="Enter your email" className={classes.input} />
+          <TextField
+            id="standard-password-input"
+            label="Enter your password"
+            type="password"
+            autoComplete="current-password"
+            className={classes.input}
+          />
+
+        <Button variant="contained" color="primary" className={classes.input}>
+            Login
+        </Button>
+
+          <FormControl className={classes.formControl}>
+            <InputLabel id="demo-simple-select-label">Age</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              className={classes.input}
+            >
+              <MenuItem value={10}>Ten</MenuItem>
+              <MenuItem value={20}>Twenty</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+            </Select>
+          </FormControl>
+
+        </form>
+        <CircularProgress value={60} />
       </ Paper>
 
     </div>
