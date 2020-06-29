@@ -2,13 +2,15 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Paper, TextField, Button, CircularProgress } from '@material-ui/core';
 import Navbar from './NavBar';
+import BarChart from './barChart';
+import PieChart from './pieChart';
+//import Doughnut from './doughnut';
 
+// import InputLabel from '@material-ui/core/InputLabel';
+// import MenuItem from '@material-ui/core/MenuItem';
 
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+// import FormControl from '@material-ui/core/FormControl';
+// import Select from '@material-ui/core/Select';
 //import Age from './Age';
 
 const useStyles = makeStyles((theme) => ({
@@ -41,7 +43,7 @@ function App() {
 
   return (
     <div className={classes.root}>
-      <Navbar />
+       {/* <Navbar />
 
       <Paper elevation={3} className={classes.paper}>
         <h1>Login</h1>
@@ -75,8 +77,10 @@ function App() {
 
         </form>
         <CircularProgress value={60} />
-      </ Paper>
-
+      </ Paper> } */}
+      <BarChart />
+      <PieChart />
+      
     </div>
   );
 }
